@@ -1,0 +1,18 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\LPF\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\LPF\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.3 (OpenLogic-OpenJDK Java 1.8.0_432-432)
+[debug] Load.defaultLoad until apply took 86.6655ms
+[debug]           Load.loadUnit: plugins took 255.5354ms
+[debug]           Load.loadUnit: defsScala took 0.6276ms
+[debug] [Loading] Scanning directory C:\AboutCode\AboutScala\WordCountSBT\project
+[debug]             Load.loadUnit: mkEval took 9.8258ms
