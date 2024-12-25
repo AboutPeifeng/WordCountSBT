@@ -2,7 +2,7 @@
 
 # 前言
 
-此教程写于2024年11月，初衷在于笔者最近有使用Spark的需求，开始上手学习简单的使用。但由于各种软件版本迭代更新太快，以及现有的参考资料较少，完成一个很简单的应用也花费了不少时间、踩了不少坑。最终完成后，特此撰写此教程，与大家分享操作步骤，由于笔者水平有限，文中如有偏颇之处欢迎各位朋友指出交流。
+此教程写于2024年11月，初衷在于最近有使用Spark的需求，开始上手学习简单的使用。但由于各种软件版本迭代更新太快，以及现有的参考资料较少，完成一个很简单的应用也花费了不少时间、踩了不少坑。最终完成后，特此撰写此教程，与大家分享操作步骤，文中如有偏颇之处欢迎各位朋友指出交流。
 
 操作在Windows11上进行，实测Ubuntu20.04.2中也行，只是需要注意选择对应系统版本的工具安装
 
@@ -21,7 +21,7 @@ sbt 1.8.3
 # 在IntelliJ中创建scala项目
 
 1. 打开**IntelliJ**并选择**New Project**，在左侧面板中选择**Scala**
-2. 在右侧面板**Name**填写“ScalaProjectDemo”、**Location**自定义（全英无空格路径）
+2. 在右侧面板**Name**填写"ScalaProjectDemo"、**Location**自定义（全英无空格路径）
 3. 在**Build system**处选择sbt
 4. **JDK**选择系统上安装的java，**sbt**版本选择1.8.3，**scala**版本选择2.13.8（此处将**Download sources**勾选，这会为项目下载jar依赖项）
 5. 点击**Create**，创建好之后在项目根目录下将会出现如下文件结构：
@@ -50,8 +50,8 @@ sbt 1.8.3
 
 1. 在左侧Project面板上，找到**ScalaProjectDemo**—>**src**—>**main**
 2. 右键单击Scala，选择**New**—>**Package**
-3. 将包命名为“example”，按下Enter确定
-4. 左侧面板右键单击example，选择**New**—>**Scala Class**，命名为“RunWordCount”，并将”Class“更改为”Object“，按下Enter确定
+3. 将包命名为"example"，按下Enter确定
+4. 左侧面板右键单击example，选择**New**—>**Scala Class**，命名为"RunWordCount"，并将"Class"更改为"Object"，按下Enter确定
 5. 编写Scala代码：
 
 ```scala
@@ -90,7 +90,7 @@ object RunWordCount extends App {
 
 1. 注意这个时候代码中的org.apache相关部分会报红
 2. 找到编译器中**File**—>**Project Structure**—>**Libraries**
-3. 点击**+**，选择**Java**，找到Spark安装目录下的jars文件夹并确认
+3. 点击 **+**，选择**Java**，找到Spark安装目录下的jars文件夹并确认
 4. 点击**Apply**—>**OK**
 
 # 添加依赖
@@ -129,11 +129,11 @@ assembly / assemblyMergeStrategy := {
 有两种方法，第一种是直接在IntelliJ中运行，点击**Run Current File**即可，程序结果会在控制台（终端）输出。第二种是只用sbt工具运行：
 
 1. 在**Run**菜单中，选择**Edit Configurations**
-2. 点击**+**，选择**sbt Task**
-3. **Name**填写”Run the ScalaFile“
-4. 在**Tasks**中，键入“~run”。当保存对项目中文件的更改时，~会导致sbt重新构建并重新运行项目
+2. 点击 **+**，选择**sbt Task**
+3. **Name**填写"Run the ScalaFile"
+4. 在**Tasks**中，键入"\~run"。当保存对项目中文件的更改时，\~会导致sbt重新构建并重新运行项目
 5. 点击**Apply**—>**OK**
-6. 在**Run**菜单上，点击**Run “Run the ScalaFile”**
+6. 在**Run**菜单上，点击**Run "Run the ScalaFile"**
 7. 首次运行sbt会初始化较长时间，等待即可。
 
 运行完程序后，会在项目根目录下data/output目录中产生输出文件。如果输出文件很大，saveAsTextFile命令会自动把它分为多个文件。_SUCCESS代表输出成功，part-00000为数据文件
